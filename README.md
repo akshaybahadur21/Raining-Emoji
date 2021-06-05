@@ -4,45 +4,66 @@
 
 What can be better than your favourite emojis raining?
 
+## Inspiration 🗽
+The pymunk logic is heavily inspired from [Amirabbas Asadi's toy project](https://github.com/amirabbasasadi/toy-project-cv-physics-engine)
+
 ## Code Requirements 🦄
 You can install Conda for python which resolves all the dependencies for machine learning.
 
 `pip install -r requirements.txt`
 
-## Description 👨‍🎨
-Quick, Draw! is an online game developed by Google that challenges players to draw a picture of an object or idea and then uses a neural network artificial intelligence to guess what the drawings represent. The AI learns from each drawing, increasing its ability to guess correctly in the future.The game is similar to Pictionary in that the player only has a limited time to draw (20 seconds).The concepts that it guesses can be simple, like 'foot', or more complicated, like 'animal migration'. This game is one of many simple games created by Google that are AI based as part of a project known as 'A.I. Experiments'. [Quick, Draw](https://quickdraw.withgoogle.com/)
+## Description 🌈
+Pymunk is a easy-to-use pythonic 2d physics library that can be used whenever you need 2d rigid body physics from Python. Perfect when you need 2d physics in your game, demo or other application! It is built on top of the very capable 2d physics library Chipmunk.
+
+MediaPipe offers cross-platform, customizable ML solutions for live and streaming media.
 
 ## Emojis used
-1) Apple :apple:
-2) Bowtie 🎀	
-3) Candle 🕯️
-4) Door :door:
-5) Envelope :envelope:
-6) Fish :fish:
-6) Guitar :guitar:
-7) Ice Cream :icecream:
-8) Lightning ⚡
-9) Moon :first_quarter_moon_with_face:
-10) Mountain :mount_fuji:
-11) Star :star:
-12) Tent :tent:
-13) Toothbrush 🧹
-14) Wristwatch :watch:
+1) Cat 🐱
+2) Cow 🐮
+3) Fox 🦊
+4) Hamster 🐹
+5) Koala 🐨
+6) Lion 🦁
+7) Monkey 🐵
+8) Mouse 🐭
+9) Panda 🐼
+10) Dog 🐶
+11) Pig 🐷
+12) Rabbit 🐰
+13) Frog 🐸
+
+
+## File Organization 🗄️
+
+```shell
+├── Raining-Emoji (Current Directory)
+    ├── emoji : Emoji Folder
+        ├── 0.png
+        ├── 1.png
+            .
+            .
+        └── 12.png
+    ├── utils : Utils Folder
+        ├── cv_utils.py : OpenCV utilities
+        └── physics_utils.py : Pymunk utilities
+    ├── RainingEmoji.py : Main Application
+    ├── LICENSE
+    ├── requirements.txt
+    └── readme.md
+        
+```
 
 ## Python  Implementation 👨‍🔬
 
-1) Network Used- Convolutional Neural Network
+1) Pretrained Model - MediaPipe Hands 
 
 If you face any problem, kindly raise an issue
 
 ## Setup 🖥️
 
-1) Get the dataset as mentioned above and place the `.npy` files in `/data` folder.
-2) First, run `LoadData.py` which will load the data from the `/data` folder and store the features and labels in  pickel files.
-3) Now you need to have the data, run `QD_trainer.py` which will load data from pickle and augment it. After this, the training process begins.
-2) Now you need to have the data, run `QuickDrawApp.py` which will use use the webcam to get what you have drawn.
-3) For altering the model, check `QD_trainer.py`.
-4) For tensorboard visualization, go to the specific log directory and run this command ` tensorboard --logdir=.` You can go to `localhost:6006` for visualizing your loss function and accuracy.
+1) Copy all the emojis in this folder `emoji/` folder.
+2) Check all the utilities stored in `utils/` folder
+3) Run `RainingEmoji.py` to run the application.
 
 
 ## Execution 🐉
@@ -57,6 +78,8 @@ python3 RainingEmoji.py
 ## References: 🔱
  
  - [Amirabbas Asadi's toy project](https://github.com/amirabbasasadi/toy-project-cv-physics-engine)
+ -  Ivan Grishchenko and Valentin Bazarevsky, Research Engineers, Google Research. [Mediapipe by Google](https://github.com/google/mediapipe)
+
 
 
 
