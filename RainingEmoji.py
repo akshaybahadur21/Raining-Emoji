@@ -17,7 +17,7 @@ class RainingEmoji:
 
     def rain(self):
         self.space.gravity = 0, -500
-        emojis = [(600 + np.random.uniform(-30, 30), 400 + 50 * i + 0.5 * i ** 2) for i in
+        emojis = [(600 + np.random.uniform(-300, 300), 400 + 50 * i + 0.5 * i ** 2) for i in
                   range(self.number_of_emojis)]
         emojis_body = [pymunk.Body(100.0, 1666, body_type=pymunk.Body.DYNAMIC) for e in emojis]
         add_emojis_to_space(self.space, emojis_body, emojis, self.emoji_radius)
