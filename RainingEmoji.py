@@ -20,10 +20,10 @@ class RainingEmoji:
         self.space.gravity = 0, -500
         emojis = [(600 + np.random.uniform(-300, 300), 400 + 50 * i + 0.5 * i ** 2) for i in
                   range(self.number_of_emojis)]
-        emojis_body = [pymunk.Body(100.0, 1666, body_type=pymunk.Body.DYNAMIC) for e in emojis]
+        emojis_body = [pymunk.Body(100.0, 1666, body_type=pymunk.Body.DYNAMIC) for _ in emojis]
         add_emojis_to_space(self.space, emojis_body, emojis, self.emoji_radius)
 
-        fingers = [pymunk.Body(1000, 16660, body_type=pymunk.Body.KINEMATIC) for i in range(8, 9)]
+        fingers = [pymunk.Body(1000, 16660, body_type=pymunk.Body.KINEMATIC) for _ in range(21)]
         add_fingers_to_space(self.space, fingers, self.fingers_radius)
 
         create_static_line(self.space, 0, 100, 1200, 100)
