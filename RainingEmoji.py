@@ -1,6 +1,7 @@
 import mediapipe as mp
-from utils.cv_utils import *
-from utils.physics_utils import *
+import cv2
+from utils.cv_utils import rescale_frame, get_emojis, overlay
+from utils.physics_utils import add_emojis_to_space, add_fingers_to_space, create_static_line
 import pymunk
 import numpy as np
 
@@ -22,7 +23,7 @@ class RainingEmoji:
         emojis_body = [pymunk.Body(100.0, 1666, body_type=pymunk.Body.DYNAMIC) for e in emojis]
         add_emojis_to_space(self.space, emojis_body, emojis, self.emoji_radius)
 
-        fingers = [pymunk.Body(10, 1666, body_type=pymunk.Body.KINEMATIC) for i in range(21)]
+        fingers = [pymunk.Body(1000, 16660, body_type=pymunk.Body.KINEMATIC) for i in range(8, 9)]
         add_fingers_to_space(self.space, fingers, self.fingers_radius)
 
         create_static_line(self.space, 0, 100, 1200, 100)
@@ -45,7 +46,7 @@ class RainingEmoji:
                             x = int(hand_landmarks.landmark[i].x * image.shape[1])
                             y = image.shape[0] - int(hand_landmarks.landmark[i].y * image.shape[0])
                             fingers[i].velocity = 20.0 * (x - fingers[i].position[0]), 20.0 * (
-                                        y - fingers[i].position[1])
+                                    y - fingers[i].position[1])
 
                 for i, emoji in enumerate(emojis_body):
                     xb = int(emoji.position[0])
@@ -54,7 +55,7 @@ class RainingEmoji:
 
                 self.space.step(0.02)
 
-                cv2.imshow("Raining Emoji", image)
+                cv2.imshow("Raining Emoji", rescale_frame(image, percent=100))
                 if cv2.waitKey(5) & 0xFF == 27:
                     break
 
