@@ -73,7 +73,7 @@ python3 RainingEmoji.py
 ```
 
 ## Results 📊
-<img src="https://github.com/akshaybahadur21/QuickDraw/blob/master/qd.gif">
+<img src="https://github.com/akshaybahadur21/BLOB/blob/master/rain.gif">
 
 ## References: 🔱
  
